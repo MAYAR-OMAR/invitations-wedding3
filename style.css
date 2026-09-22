@@ -591,20 +591,20 @@ body, html {
 
 
 
-
-/* شاشة الـ Envelope والتغطية بالكامل */
+/* شاشة الـ Envelope والملء الكامل للشاشة بدون سواد */
 .envelope-overlay {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     background: #1a1a1a;
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 99999;
     transition: opacity 0.8s ease, visibility 0.8s ease;
+    overflow: hidden;
 }
 
 .envelope-overlay.hide-envelope {
@@ -613,43 +613,45 @@ body, html {
     pointer-events: none;
 }
 
+/* الفيديو يملى الموبايل واللابتوب بالكامل بدون أي مساحات سوداء */
 .envelope-video {
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-/* زرار أبيض فخم في منتصف الشاشة بالضبط */
+/* الزرار الأبيض الفخم في المنتصف */
 .envelope-center-prompt {
     position: relative;
     z-index: 2;
-    background: rgba(255, 255, 255, 0.92);
+    background: rgba(255, 255, 255, 0.95);
     border: 1px solid rgba(197, 160, 89, 0.5);
-    padding: 18px 35px;
+    padding: 16px 32px;
     border-radius: 40px;
     text-align: center;
     cursor: pointer;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     transition: all 0.3s ease;
-    backdrop-filter: blur(5px);
 }
 
 .envelope-center-prompt:hover {
     background: #ffffff;
     transform: scale(1.05);
-    box-shadow: 0 15px 35px rgba(197, 160, 89, 0.3);
 }
 
 .tap-main-text {
     display: block;
     font-family: 'Montserrat', sans-serif;
     color: #2c2c2c;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     font-weight: 600;
-    letter-spacing: 3px;
+    letter-spacing: 2px;
     margin-bottom: 2px;
 }
 
@@ -657,6 +659,6 @@ body, html {
     display: block;
     font-family: 'Cormorant Garamond', serif;
     color: #8c6d33;
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     letter-spacing: 2px;
 }

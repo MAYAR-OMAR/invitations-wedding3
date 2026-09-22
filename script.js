@@ -20,25 +20,25 @@ const countdownInterval = setInterval(function() {
     document.getElementById("hours").innerText = String(hours).padStart(2, '0');
     document.getElementById("minutes").innerText = String(minutes).padStart(2, '0');
     document.getElementById("seconds").innerText = String(seconds).padStart(2, '0');
-}, 1000);function openEnvelope() {
+}, 1000);function openInvitation() {
     const overlay = document.getElementById('envelopeOverlay');
     const video = document.getElementById('envelopeVideo');
     const song = document.getElementById('weddingSong');
     
-    // Tsh3el al-sawt
+    // إخفاء الزرار فور الضغط عليه
+    document.querySelector('.envelope-center-prompt').style.display = 'none';
+    
+    // 1. تشغيل الأغنية الخلفية فوراً (مسموحة لأنها جاءت بعد تفاعل المستخدم مباشرة)
     song.play().catch(error => {
         console.log("Audio play error:", error);
     });
     
-    // Tsh3el video al-envelope
+    // 2. تشغيل فيديو الزرف
     video.play().catch(error => {
         console.log("Video play error:", error);
     });
     
-    // I5fa2 el-prompt al-abyad elly fl nos awl ma nndos
-    document.querySelector('.envelope-center-prompt').style.display = 'none';
-    
-    // Awl ma video al-envelope y5ls tmamman, el-overlay hy5tfa w tftoh el-invitation
+    // 3. أول ما فيديو الزرف يخلص، يختفي الغلاف وتظهر الدعوة وتظل الأغنية شغالـة
     video.onended = function() {
         overlay.classList.add('hide-envelope');
     };

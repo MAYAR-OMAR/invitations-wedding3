@@ -9,25 +9,28 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<!-- Envelope Video Opening Overlay -->
+<!-- شاشة الـ Envelope والـ Video والزرار الأبيض -->
 <div id="envelopeOverlay" class="envelope-overlay">
-    <video id="envelopeVideo" class="envelope-video" poster="poster2.jfif" playsinline>
-        <source src="openingvideo2.mp4" type="video/mp4">
+    <!-- فيديو الزرف (صامت muted عشان يشتغل فوري بدون مشاكل على الموبايل) -->
+    <video id="envelopeVideo" class="envelope-video" poster="./poster2.jfif" playsinline webkit-playsinline muted>
+        <source src="./openingvideo2.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
     
     <!-- الزرار الأبيض في منتصف الشاشة -->
-    <div class="envelope-center-prompt" onclick="openEnvelope()">
+    <div class="envelope-center-prompt" onclick="openInvitation()">
         <span class="tap-main-text">CLICK TO OPEN</span>
         <span class="tap-sub-text">INVITATION</span>
     </div>
 </div>
 
-<!-- عنصر الصوت الخلفي -->
+<!-- ملف الأغنية المنفصل اللي هيفضل شغال في الخلفية -->
 <audio id="weddingSong" loop>
-    <source src="ssstik.io_1790091419174.mp3" type="audio/mp3">
+    <source src="./ssstik.io_1790091419174.mp3" type="audio/mp3">
     Your browser does not support the audio element.
 </audio>
+
+<!-- هنا باقي محتوى الدعوة بتاعك (Our Story وغيرها) -->
 
 
 <!--hna b2a baqy mo7tawa al-invitation bta3tk (Save the date, Our story, etc.) -->
@@ -171,10 +174,10 @@
 
     <!-- مشغل الفيديو الحقيقي -->
     <div class="video-container-box">
-        <video class="story-real-video" controls poster="">
-            <source src="map.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
+        <video class="story-real-video" autoplay muted playsinline controls poster="">
+    <source src="map.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
     </div>
 
    
