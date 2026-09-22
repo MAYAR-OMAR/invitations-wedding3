@@ -136,7 +136,7 @@ body, html {
 }
 
 .monogram-img {
-    max-width: 180px;
+    max-width: 120px;
     height: auto;
 }
 
@@ -173,7 +173,9 @@ body, html {
     font-weight: 400;
     text-transform: uppercase;
 }
-
+.quran-ayah {
+    margin-right: 60px;
+}
 
 /* page 2 *//* تنسيق الصفحة الثانية */
 /* تنسيق الصفحة الثانية الكاملة والمتناسقة مع الصفحة الأولى */
