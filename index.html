@@ -9,7 +9,28 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<!-- Envelope Video Opening Overlay -->
+<div id="envelopeOverlay" class="envelope-overlay">
+    <video id="envelopeVideo" class="envelope-video" poster="poster2.jfif" playsinline>
+        <source src="openingvideo2.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    
+    <!-- الزرار الأبيض في منتصف الشاشة -->
+    <div class="envelope-center-prompt" onclick="openEnvelope()">
+        <span class="tap-main-text">CLICK TO OPEN</span>
+        <span class="tap-sub-text">INVITATION</span>
+    </div>
+</div>
 
+<!-- عنصر الصوت الخلفي -->
+<audio id="weddingSong" loop>
+    <source src="ssstik.io_1790091419174.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+</audio>
+
+
+<!--hna b2a baqy mo7tawa al-invitation bta3tk (Save the date, Our story, etc.) -->
     <!-- 1. خلفية الموقع العامة -->
     <div class="website-background"></div>
 
@@ -49,57 +70,114 @@
 
 
 
-<!-- الصفحة الثانية الشاملة (Save the Date & Countdown) -->
-    <section class="hero-screen second-full-page">
-        <div class="full-page-content">
-            <!-- عنوان Save the Date أنيق -->
-            <h2 class="save-title-royal">SAVE THE DATE</h2>
 
-            <!-- العد التنازلي بدون أرقام ثابتة (هيتملى بالـ JS) -->
-            <div class="countdown-royal">
-                <div class="time-box-royal">
-                    <span id="days">00</span>
-                    <span class="label-royal">DAYS</span>
-                </div>
-                <span class="dots-royal">:</span>
-                <div class="time-box-royal">
-                    <span id="hours">00</span>
-                    <span class="label-royal">HOURS</span>
-                </div>
-                <span class="dots-royal">:</span>
-                <div class="time-box-royal">
-                    <span id="minutes">00</span>
-                    <span class="label-royal">MINUTES</span>
-                </div>
-                <span class="dots-royal">:</span>
-                <div class="time-box-royal">
-                    <span id="seconds">00</span>
-                    <span class="label-royal">SECONDS</span>
+
+<div class="invitation-container luxury-second-page">
+    <!-- Title -->
+    <h1 class="save-title">Save The Date</h1>
+    <div class="date-badge">Thursday • 29.10.2026 • 6:00 PM</div>
+
+    <!-- Countdown Timer (جنب بعضه في دوائر فخمة) -->
+    <div class="countdown-circle-grid" id="countdown">
+        <div class="circle-box">
+            <span class="circle-number" id="days">37</span>
+            <span class="circle-label">Days</span>
+        </div>
+        <div class="circle-separator">:</div>
+        <div class="circle-box">
+            <span class="circle-number" id="hours">02</span>
+            <span class="circle-label">Hours</span>
+        </div>
+        <div class="circle-separator">:</div>
+        <div class="circle-box">
+            <span class="circle-number" id="minutes">48</span>
+            <span class="circle-label">Mins</span>
+        </div>
+        <div class="circle-separator">:</div>
+        <div class="circle-box">
+            <span class="circle-number" id="seconds">15</span>
+            <span class="circle-label">Secs</span>
+        </div>
+    </div>
+
+    <!-- Resort Hotel & Location Button -->
+    <div class="venue-section">
+        <div class="venue-icon"><i class="fa-solid fa-champagne-glasses"></i></div>
+        <h3>At Resort Hotel</h3>
+        <p>Thursday, 29/10/2026 at 6:00 PM</p>
+        <a href="https://maps.app.goo.gl/4anz8P7pXXWzM9r89?g_st=iw" target="_blank" class="luxury-map-btn">
+            <span>View Location</span>
+            <i class="fa-solid fa-arrow-right"></i>
+        </a>
+    </div>
+
+    <!-- Unplugged Ceremony Notice -->
+    <div class="unplugged-section">
+        <div class="camera-icon-glow">
+            <i class="fa-solid fa-camera-slash"></i>
+        </div>
+        <h4>Unplugged Ceremony</h4>
+        <p>We kindly request no photography during the ceremony so we can share this special moment fully present with you.</p>
+    </div>
+</div>
+
+
+
+
+
+
+<!-- القسم الثالث: Our Story (Where We Met) -->
+<div class="invitation-container story-page">
+    <!-- العنوان -->
+    <div class="story-header">
+        <span class="story-subtitle">Our Story</span>
+        <h2 class="story-title">Where We Met</h2>
+    </div>
+
+    <!-- تفاصيل القصة والمسار (مطابق تماماً للصورة) -->
+    <div class="story-map-card-exact">
+        <div class="map-visual-container">
+            <!-- دبوس مصر (الشمال تحت) -->
+            <div class="pin-point egypt-pin">
+                <div class="map-pin-icon">📍</div>
+                <span class="country-name">EGYPT</span>
+                <span class="person-role">GROOM</span>
+            </div>
+
+            <!-- الخط المنحني والقلب في المنتصف (الرياض) -->
+            <div class="path-curve-box">
+                <div class="curved-dashed-line"></div>
+                <div class="riyadh-center-badge">
+                    <div class="heart-icon-glow">❤️</div>
+                    <h3 class="riyadh-word">RIYADH</h3>
+                    <p class="riyadh-sub">Where Our Hearts Met</p>
                 </div>
             </div>
 
-            <!-- معلومات المكان -->
-            <div class="location-royal-area">
-                <span class="at-royal">AT</span>
-                <h3 class="hotel-royal">RESORT HOTEL</h3>
-                <a href="https://maps.google.com" target="_blank" class="location-btn-royal">CLICK HERE FOR LOCATION</a>
-            </div>
-
-            <!-- التاريخ -->
-            <div class="date-royal-area">
-                <span class="day-royal">THURSDAY</span>
-                <div class="date-num-royal">29 / 10 / 2026</div>
-            </div>
-
-            <!-- ممنوع التصوير -->
-            <div class="no-photo-royal">
-                <div class="photo-icon-royal">📴</div>
-                <span class="photo-txt-royal">NO PHOTOGRAPHY PLEASE</span>
+            <!-- دبوس الأردن (اليمين فوق) -->
+            <div class="pin-point jordan-pin">
+                <div class="map-pin-icon">📍</div>
+                <span class="country-name">JORDAN</span>
+                <span class="person-role">BRIDE</span>
             </div>
         </div>
-    </section>
+    </div>
 
+    <!-- النصوص الوصفية -->
+    <div class="story-text-content">
+        <p class="main-quote">"Two different paths, one beautiful destination."</p>
+        <p class="sub-quote">From Egypt & Jordan to Riyadh, where our story officially began.</p>
+    </div>
 
+    <!-- مشغل الفيديو الحقيقي -->
+    <div class="video-container-box">
+        <video class="story-real-video" controls poster="">
+            <source src="map.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+   
 
 
     <!-- مش محتاجين ملف script.js لو كان مخصص للـ typewriter بس -->

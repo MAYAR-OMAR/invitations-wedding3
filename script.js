@@ -1,35 +1,45 @@
-// تاريخ الفرح المحدد (29 أكتوبر 2026)
-const weddingDate = new Date("October 29, 2026 00:00:00").getTime();
+// Set the date we're counting down to: October 29, 2026, 18:00:00 (6 PM)
+const weddingDate = new Date("October 29, 2026 18:00:00").getTime();
 
-function updateCountdown() {
+const countdownInterval = setInterval(function() {
     const now = new Date().getTime();
-    const gap = weddingDate - now;
+    const distance = weddingDate - now;
 
-    if (gap < 0) return;
+    if (distance < 0) {
+        clearInterval(countdownInterval);
+        document.getElementById("countdown").innerHTML = "<div style='grid-column: span 4; font-size: 1.2rem; font-family: Cormorant Garamond, serif; color: #c5a059;'>The Big Day Has Arrived!</div>";
+        return;
+    }
 
-    const second = 1000;
-    const minute = second * 60;
-    const hour = minute * 60;
-    const day = hour * 24;
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-    // حساب الأيام، الساعات، الدقائق، الثواني
-    const days = Math.floor(gap / day);
-    const hours = Math.floor((gap % day) / hour);
-    const minutes = Math.floor((gap % hour) / minute);
-    const seconds = Math.floor((gap % minute) / second);
-
-    // ربط القيم بالعناصر في الـ HTML مع إضافة صفر لو الرقم أقل من 10
-    const daysEl = document.getElementById("days");
-    const hoursEl = document.getElementById("hours");
-    const minutesEl = document.getElementById("minutes");
-    const secondsEl = document.getElementById("seconds");
-
-    if (daysEl) daysEl.innerText = days < 10 ? "0" + days : days;
-    if (hoursEl) hoursEl.innerText = hours < 10 ? "0" + hours : hours;
-    if (minutesEl) minutesEl.innerText = minutes < 10 ? "0" + minutes : minutes;
-    if (secondsEl) secondsEl.innerText = seconds < 10 ? "0" + seconds : seconds;
+    document.getElementById("days").innerText = String(days).padStart(2, '0');
+    document.getElementById("hours").innerText = String(hours).padStart(2, '0');
+    document.getElementById("minutes").innerText = String(minutes).padStart(2, '0');
+    document.getElementById("seconds").innerText = String(seconds).padStart(2, '0');
+}, 1000);function openEnvelope() {
+    const overlay = document.getElementById('envelopeOverlay');
+    const video = document.getElementById('envelopeVideo');
+    const song = document.getElementById('weddingSong');
+    
+    // Tsh3el al-sawt
+    song.play().catch(error => {
+        console.log("Audio play error:", error);
+    });
+    
+    // Tsh3el video al-envelope
+    video.play().catch(error => {
+        console.log("Video play error:", error);
+    });
+    
+    // I5fa2 el-prompt al-abyad elly fl nos awl ma nndos
+    document.querySelector('.envelope-center-prompt').style.display = 'none';
+    
+    // Awl ma video al-envelope y5ls tmamman, el-overlay hy5tfa w tftoh el-invitation
+    video.onended = function() {
+        overlay.classList.add('hide-envelope');
+    };
 }
-
-// تشغيل الـ Countdown وتحديثه كل ثانية
-setInterval(updateCountdown, 1000);
-updateCountdown();
