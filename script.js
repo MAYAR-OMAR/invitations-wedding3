@@ -1,5 +1,5 @@
 // Set the date we're counting down to: October 29, 2026, 18:00:00 (6 PM)
-const weddingDate = new Date("October 29, 2026 18:00:00").getTime();
+const weddingDate = new Date("October 31, 2026 18:00:00").getTime();
 
 const countdownInterval = setInterval(function() {
     const now = new Date().getTime();
